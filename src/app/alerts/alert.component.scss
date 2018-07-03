@@ -1,0 +1,95 @@
+$delay: 5s;
+
+:host {
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 9999;
+}
+
+%alert {
+  display: flex;
+  transform: translateX(500px);
+  color: white;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  padding: 5px 0;
+  width: 300px;
+  min-height: 50px;
+  animation: fade $delay ease;
+  cursor: pointer;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+  font-size: 1em;
+
+  span {
+    margin: auto 0px;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  svg {
+    height: 35px;
+    width: 35px;
+    margin: auto 10px;
+
+    path {
+      stroke: #FFFFFF;
+      stroke-width: 20;
+      fill: none;
+    }
+  }
+}
+
+.success {
+  @extend %alert;
+
+  background: #27ae60;
+}
+
+.error {
+  @extend %alert;
+
+  background: #c0392b;
+}
+
+.warn {
+  @extend %alert;
+
+  background: #e67e22;
+}
+
+.info {
+  @extend %alert;
+
+  background: #2980b9;
+}
+
+@keyframes fade {
+  0% {
+    transform: translateX(500px);
+  }
+  5% {
+    transform: translateX(-20px);
+  }
+  6% {
+    transform: translateX(0);
+  }
+  
+  95% {
+    transform: translateX(0);
+  }
+  96% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(500);
+  }
+}
+
+.close {
+  transform: translateX(500);
+}

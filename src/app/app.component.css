@@ -1,0 +1,14 @@
+textarea {
+  display: block;
+  width: 400px;
+  height: 100px;
+  padding: 5px;
+}
+
+button {
+  width: 100px;
+}
+
+button + button {
+  margin: 2px;
+}

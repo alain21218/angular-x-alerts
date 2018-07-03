@@ -1,0 +1,52 @@
+<div *ngFor="let a of alert.alerts" [class]="a.style" (click)="alert.remove(a)">
+
+	<svg *ngIf="a.style === 'success'" viewBox="0 0 143 150">
+		<g transform="translate(-32.926554,-70.331111)">
+			<path d="m 35.827294,129.09657 c 0,0 23.732323,17.11724 51.487074,77.90092 0,0 34.995122,-111.786081 86.884442,-132.047311" />
+		</g>
+	</svg>
+
+	<svg *ngIf="a.style === 'error'" viewBox="0 0 163 163">
+		<g transform="translate(-28.619336,-55.501149)">
+			<g transform="matrix(1.1321521,0,0,1.1258268,-50.924709,7.3131962)">
+				<path d="M 208.83185,49.047618 76.540177,182.09523 m 2e-6,-133.04761 132.291661,133.04761" />
+			</g>
+		</g>
+	</svg>
+
+	<svg *ngIf="a.style === 'warn'" viewBox="0 0 170 150">
+		<g transform="translate(-21.721219,-82.161491)">
+			<g>
+				<path transform="matrix(0.70183452,-0.15359879,0.15359879,0.70183452,288.92248,128.85306)" d="m -169.33335,99.696429 -102.66813,-22.263824 -110.12857,-24.211277 70.61511,-77.781303 76.03186,-83.268495 32.05303,100.0451267 z"
+				 style="stroke-linejoin:round" />
+				<g>
+					<path style="stroke-width:15" d="m 108.75207,141.00395 c 0,36.3408 0,36.58635 0,36.58635" />
+					<circle style="fill:currentColor" cx="108.75207" cy="198.38219" r="6.084281" />
+				</g>
+			</g>
+		</g>
+	</svg>
+
+  <svg *ngIf="a.style === 'info'" viewBox="0 0 58 150">
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-77.51317,-63.056803)">
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:236.48960876px;line-height:1.25;font-family:'Monotype Corsiva';-inkscape-font-specification:'Monotype Corsiva, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:currentColor;fill-opacity:1;stroke:none;stroke-width:1.18244791"
+       x="58.806473"
+       y="209.82355"
+       id="text5139"><tspan
+         sodipodi:role="line"
+         id="tspan5137"
+         x="58.806473"
+         y="209.82355"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:236.48960876px;font-family:'Monotype Corsiva';-inkscape-font-specification:'Monotype Corsiva, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:1.18244791">i</tspan></text>
+  </g>
+</svg>
+
+
+	<span>{{ a.content }}</span>
+</div>

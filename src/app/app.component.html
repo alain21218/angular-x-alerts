@@ -1,0 +1,8 @@
+<ngx-alert></ngx-alert>
+
+<textarea placeholder="text to alert" [(ngModel)]="text"></textarea>
+
+<button (click)="alert.success(text)">success</button>
+<button (click)="alert.error(text)">error</button>
+<button (click)="alert.warn(text)">warning</button>
+<button (click)="alert.info(text)">info</button>
