@@ -2,7 +2,7 @@ $delay: 5s;
 
 :host {
   display: block;
-  position: absolute;
+  position: fixed;
   top: 5px;
   right: 5px;
   z-index: 9999;
@@ -78,7 +78,7 @@ $delay: 5s;
   6% {
     transform: translateX(0);
   }
-  
+
   95% {
     transform: translateX(0);
   }

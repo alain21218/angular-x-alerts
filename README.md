@@ -1,5 +1,5 @@
 ## DEMO
-[view on stackblitz](https://stackblitz.com/edit/angular-x-alerts-demo?file=src/app/app.component.ts)
+[View on stackblitz](https://stackblitz.com/github/alain21218/angular-x-alerts)
 
 ## Install 
 ```sh
