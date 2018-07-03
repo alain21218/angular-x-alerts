@@ -1,6 +1,11 @@
 ## DEMO
 [view on stackblitz](https://stackblitz.com/edit/angular-x-alerts-demo?file=src/app/app.component.ts)
 
+## Install 
+```sh
+npm install angular-x-alerts
+```
+
 ## Usage
 ```html
 <!-- add this line on top of your app.component.html -->
