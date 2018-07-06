@@ -29,7 +29,6 @@ export class AlertService {
 
     a.timeout = setTimeout(() => {
       this.remove(a);
-      console.log(this.alerts);
     }, 5000);
   }
 
