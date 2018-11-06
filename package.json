@@ -1,6 +1,6 @@
 {
   "name": "angular-x-alerts",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "Simple Angular 2+ alert module",
   "scripts": {
     "ng": "ng",
