@@ -8,9 +8,16 @@ $delay: 5s;
   z-index: 9999;
 }
 
+.auto-remove {
+  animation: slideout $delay ease !important;
+}
+
 %alert {
-  display: flex;
   transform: translateX(500px);
+  animation: slidein $delay ease;
+  animation-fill-mode: forwards;  
+
+  display: flex;
   color: white;
   padding: 5px;
   margin: 5px;
@@ -18,7 +25,6 @@ $delay: 5s;
   padding: 5px 0;
   width: 300px;
   min-height: 50px;
-  animation: fade $delay ease;
   cursor: pointer;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
   font-size: 1em;
@@ -68,7 +74,7 @@ $delay: 5s;
   background: #2980b9;
 }
 
-@keyframes fade {
+@keyframes slidein {
   0% {
     transform: translateX(500px);
   }
@@ -78,7 +84,21 @@ $delay: 5s;
   6% {
     transform: translateX(0);
   }
+  100% {
+    transform: translateX(0);
+  }
+}
 
+@keyframes slideout{
+  0% {
+    transform: translateX(500px);
+  }
+  5% {
+    transform: translateX(-20px);
+  }
+  6% {
+    transform: translateX(0);
+  }
   95% {
     transform: translateX(0);
   }

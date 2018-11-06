@@ -1,5 +1,5 @@
-<div *ngFor="let a of alert.alerts" [class]="a.style" (click)="alert.remove(a)">
 
+<div *ngFor="let a of alert.alerts" [class]="a.style" [class.auto-remove]="!a.persist" (click)="alert.remove(a)">
 	<svg *ngIf="a.style === 'success'" viewBox="0 0 143 150">
 		<g transform="translate(-32.926554,-70.331111)">
 			<path d="m 35.827294,129.09657 c 0,0 23.732323,17.11724 51.487074,77.90092 0,0 34.995122,-111.786081 86.884442,-132.047311" />

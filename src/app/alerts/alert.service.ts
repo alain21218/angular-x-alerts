@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { delay } from 'q';
 
 @Injectable()
 export class AlertService {
@@ -7,29 +8,32 @@ export class AlertService {
 
   constructor() { }
 
-  public success(message: string) {
-    this.show(message, 'success');
+  public success(message: string, persist = false) {
+    this.show(message, 'success', persist);
   }
 
-  public error(message: string) {
-    this.show(message, 'error');
+  public error(message: string, persist = false) {
+    this.show(message, 'error', persist);
   }
 
-  public warn(message: string) {
-    this.show(message, 'warn');
+  public warn(message: string, persist = false) {
+    this.show(message, 'warn', persist);
   }
 
-  public info(message: string) {
-    this.show(message, 'info');
+  public info(message: string, persist = false) {
+    this.show(message, 'info', persist);
   }
 
-  public show(content: string, style = 'info') {
-    const a = { style, content, timeout: null }
+  public show(content: string, style = 'info', persist = false) {
+    const a = { style, content, timeout: null, persist }
     this.alerts.push(a);
 
-    a.timeout = setTimeout(() => {
-      this.remove(a);
-    }, 5000);
+    if(!persist) {
+        a.timeout = setTimeout(() => {
+          this.remove(a);
+        }, 5000);
+    }
+    
   }
 
   remove(alert: any) {
