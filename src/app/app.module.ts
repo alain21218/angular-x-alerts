@@ -5,13 +5,16 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
+const options = { persist: { success: false, error: true, warn: true, info: true } }
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
-    AlertModule,
+    AlertModule.forRoot(),
+    // AlertModule.forRoot(options),
     FormsModule
   ],
   providers: [],

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { delay } from 'q';
 
 @Injectable()
@@ -6,21 +6,39 @@ export class AlertService {
 
   public alerts = [];
 
-  constructor() { }
+  constructor(@Inject('config') private config) {
+    console.log(config)
+  }
 
-  public success(message: string, persist = false) {
+  public success(message: string, persist = null) {
+    if(persist === null && this.config && this.config.persist && this.config.persist.success) {
+      persist = true;
+    }
+
     this.show(message, 'success', persist);
   }
 
-  public error(message: string, persist = false) {
+  public error(message: string, persist = null) {
+    if(persist === null && this.config && this.config.persist && this.config.persist.error) {
+      persist = true;
+    }
+
     this.show(message, 'error', persist);
   }
 
-  public warn(message: string, persist = false) {
+  public warn(message: string, persist = null) {
+    if(persist === null && this.config && this.config.persist && this.config.persist.warn) {
+      persist = true;
+    }
+
     this.show(message, 'warn', persist);
   }
 
-  public info(message: string, persist = false) {
+  public info(message: string, persist = null) {
+    if(persist === null && this.config && this.config.persist && this.config.persist.info) {
+      persist = true;
+    }
+    
     this.show(message, 'info', persist);
   }
 

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AlertComponent } from './alert.component';
 import { AlertService } from './alert.service';
@@ -13,4 +13,14 @@ import { AlertService } from './alert.service';
   providers: [AlertService],
   exports: [AlertComponent]
 })
-export class AlertModule { }
+export class AlertModule {
+  public static forRoot(config?): ModuleWithProviders {
+    return {
+      ngModule: AlertModule,
+      providers: [
+        AlertService,
+        { provide: 'config', useValue: config }
+      ]
+    };
+  }
+}

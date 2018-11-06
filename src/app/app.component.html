@@ -3,7 +3,7 @@
 <textarea placeholder="text to alert" [(ngModel)]="text"></textarea>
 
 
-<button (click)="alert.success(text)">success</button>
+<button (click)="alert.success(text, persist)">success</button>
 <button (click)="alert.error(text, persist)">error</button>
 <button (click)="alert.warn(text, persist)">warning</button>
 <button (click)="alert.info(text, persist)">info</button>
@@ -11,5 +11,5 @@
 <hr>
 
 <label>
-    Remove alerts automatically:  <input type="checkbox" [(ngModel)]="persist">
+    Do not remove alerts automatically:  <input type="checkbox" [(ngModel)]="persist">
 </label>
