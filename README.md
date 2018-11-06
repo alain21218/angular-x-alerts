@@ -17,10 +17,12 @@ import { AlertModule } from 'angular-x-alerts';
 
 //...
 
+const options = { persist: { success: false, error: true, warn: true, info: true } }
+
 @NgModule({
   imports:      [ 
       BrowserModule,  
-      AlertModule // <---- HERE
+      AlertModule.forRoot(options) // <---- HERE
   ],
   declarations: [ AppComponent ],
   bootstrap:    [ AppComponent ]
